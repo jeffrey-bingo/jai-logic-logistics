@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jai Logic Logistics | B2B Supply Verification &amp; Delivery Logistics</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-bar">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">JL</span>
+        <span>Jai Logic Logistics</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="index.html" class="active">Home</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <span class="hero-badge">B2B Supply Verification &amp; Delivery Logistics</span>
+      <h1>Reliable Commercial Supply Verification &amp; Scheduled Delivery</h1>
+      <p>
+        Jai Logic Logistics partners with commercial and institutional accounts to verify inventory manifests,
+        coordinate dock-ready shipments, and provide timely delivery window notifications.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#sms-opt-in">Sample SMS ETA Opt-In</a>
+        <a class="btn btn-outline" href="terms.html">View SMS Terms</a>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <div class="container">
+      <h2 class="section-title">Core Capabilities</h2>
+      <p class="section-subtitle">
+        Streamlined B2B fulfillment built around accurate shipment verification and clear delivery communication.
+      </p>
+
+      <div class="grid-3">
+        <article class="card">
+          <div class="card-accent"></div>
+          <h3>Supply Verification</h3>
+          <p>
+            Pre-dispatch manifest checks and itemized SKU verification ensure every commercial order matches
+            purchase order specifications before leaving the dock.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-accent"></div>
+          <h3>Scheduled B2B Delivery</h3>
+          <p>
+            Coordinated route scheduling tailored to receiving hours, loading dock availability, and multi-stop
+            commercial delivery windows.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-accent"></div>
+          <h3>Transactional ETA Updates</h3>
+          <p>
+            Optional SMS delivery ETA alerts keep receiving contacts informed of dispatch status, arrival windows,
+            and schedule adjustments.
+          </p>
+        </article>
+      </div>
+
+      <section id="sms-opt-in" class="optin-section" aria-labelledby="optin-heading">
+        <div class="optin-header">
+          <span class="optional-tag">Optional &amp; Non-Required</span>
+          <h2 id="optin-heading" class="section-title">Sample SMS Delivery ETA Opt-In</h2>
+          <p class="section-subtitle" style="margin-bottom: 0;">
+            Receiving contacts may optionally enroll to receive transactional SMS delivery ETA notifications for
+            scheduled Jai Logic Logistics shipments. Enrollment is not required to place orders or receive deliveries.
+          </p>
+        </div>
+
+        <form id="sample-optin-form" novalidate>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="business-name">Business Name (Optional)</label>
+              <input type="text" id="business-name" name="business_name" placeholder="e.g., Acme Supply Co." />
+            </div>
+            <div class="form-group">
+              <label for="contact-name">Contact Name (Optional)</label>
+              <input type="text" id="contact-name" name="contact_name" placeholder="e.g., Jordan Lee" />
+            </div>
+            <div class="form-group">
+              <label for="delivery-address">Delivery Address (Optional)</label>
+              <input type="text" id="delivery-address" name="delivery_address" placeholder="e.g., 1200 Commerce Way" />
+            </div>
+            <div class="form-group">
+              <label for="mobile-phone">Mobile Phone Number (Optional)</label>
+              <input type="tel" id="mobile-phone" name="mobile_phone" placeholder="e.g., (555) 234-5678" />
+            </div>
+          </div>
+
+          <div class="checkbox-group">
+            <input type="checkbox" id="sms-consent" name="sms_consent" />
+            <label for="sms-consent">
+              I agree to receive transactional SMS delivery ETA notifications and scheduled delivery coordination
+              messages from Jai Logic Logistics at the mobile number provided. Message frequency varies by scheduled
+              deliveries. Message and data rates may apply. Reply <strong>STOP</strong> to opt out or
+              <strong>HELP</strong> for help. View our <a href="privacy.html">Privacy Policy</a> and
+              <a href="terms.html">Terms &amp; Conditions</a>.
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Submit Sample Opt-In</button>
+          <div id="form-feedback" class="form-feedback" role="status" aria-live="polite"></div>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 Jai Logic Logistics. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var form = document.getElementById("sample-optin-form");
+      var checkbox = document.getElementById("sms-consent");
+      var feedback = document.getElementById("form-feedback");
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        feedback.className = "form-feedback";
+        if (!checkbox.checked) {
+          feedback.classList.add("notice");
+          feedback.textContent = "Sample form notice: SMS consent checkbox is currently unchecked. Check the box above if you wish to opt in to delivery ETA alerts.";
+          return;
+        }
+        feedback.classList.add("success");
+        feedback.textContent = "Sample opt-in recorded for demonstration purposes. Transactional delivery ETA alerts can be stopped anytime by replying STOP.";
+      });
+    })();
+  </script>
+</body>
+</html>
